@@ -1,35 +1,52 @@
 {% macro loop(page) %}
     {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+        {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
         {% if p.children.visible.count > 0 %}
-            <li class="has-children {{ current_page }}">
-                <a href="{{ p.url }}">
+            <li class="nav-item dropdown has-children {{ current_page }}">
+                <a class="nav-link dropdown-toggle" href="{{ p.url }}" id="dropdown_{{ p.url|md5 }}" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-                <ul>
+                    {{ p.menu }}</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown_{{ p.url|md5 }}">
                     {{ _self.loop(p) }}
-                </ul>
+                </div>
             </li>
         {% else %}
-            <li class="{{ current_page }}">
-                <a href="{{ p.url }}">
+        <!-- todo: don't use this section for both dropdown and normal links, that breaks the design -->
+            <!-- <li class="nav-item {{ current_page }}"> -->
+                <a class="nav-link dropdown-item" href="{{ p.url }}">
                     {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
                     {{ p.menu }}
                 </a>
-            </li>
+          <!--  </li> -->
         {% endif %}
     {% endfor %}
 {% endmacro %}
 
-<ul>
+
+        <ul class="navbar-nav mr-auto">
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+
+
+
+
+<ul class="navbar-nav mr-auto">
     {% if theme_config.dropdown.enabled %}
-        {{ _self.loop(pages) }}
+            {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">
+            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+            <li class="nav-item {{ current_page }}">
+                <a class="nav-link" href="{{ page.url }}">
                     {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
                     {{ page.menu }}
                 </a>
@@ -37,8 +54,8 @@
         {% endfor %}
     {% endif %}
     {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ mitem.url }}">
                 {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
                 {{ mitem.text }}
             </a>

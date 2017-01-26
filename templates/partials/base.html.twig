@@ -19,7 +19,12 @@
        {# do assets.addCss('theme://css/custom.css', 98) #}
     {% endblock %}
     {{ assets.css() }}
-
+ <style>
+        /* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 2rem;
+}
+    </style>
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
               {% do assets.add('theme://js/bootstrap/bootstrap.min.js') %}
@@ -27,29 +32,35 @@
     {% endblock %}
     {{ assets.js() }}
 
-{% endblock head%}
+{% endblock head %}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+ 
+
+ <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand __logo __left" href="{{ base_url == '' ? '/' : base_url }}">
                 <i class="fa fa-rebel"></i>
                 {{ config.site.title }}
             </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+ {% block header_navigation %}
                 {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+            {% endblock %}        
+      </div>
+    </nav>
+
+
 {% endblock %}
 
 {% block body %}
     <section id="body">
-        <div class="wrapper padding">
+        <div class="container wrapper padding">
         {% block content %}{% endblock %}
         </div>
     </section>
@@ -57,8 +68,12 @@
 
 {% block footer %}
     <div class="footer text-center">
-        <div class="wrapper padding">
+        <div class="container">
+        <div class="row wrapper padding">
+            <div class="col-xs-12 col-md-8">
             <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+            </div>
+        </div>
         </div>
     </div>
 {% endblock %}
