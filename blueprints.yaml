@@ -1,0 +1,35 @@
+name: Tikva
+version: 0.1.0
+description: Tikva is a minimalistic Grav theme, based on Bootstrap framework
+icon: rebel
+author:
+  name: Ralf Geschke
+  email: ralf@kuerbis.org
+homepage: https://github.com/geschke/grav-theme-tikva
+demo: http://www.geschke.net
+keywords: grav, theme, etc
+bugs: https://github.com/geschke/grav-theme-tikva/issues
+readme: https://github.com/geschke/grav-theme-tikva/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED 
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+
+    color:
+        type: text
+        size: medium
+        label: Color
+        default: 'blue'
+        validate:
+          type: text
