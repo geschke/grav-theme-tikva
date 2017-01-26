@@ -14,7 +14,11 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
+    {% if theme_config.theme_stylesheet != 'default' %}
+        {% do assets.addCss("theme://css/bootswatch/#{ theme_config.theme_stylesheet }/bootstrap.min.css", 100) %}
+    {% else %}
         {% do assets.addCss('theme://css/bootstrap/bootstrap.min.css', 100) %}
+    {% endif %}
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
        {# do assets.addCss('theme://css/custom.css', 98) #}
     {% endblock %}
@@ -39,7 +43,7 @@ body {
 {% block header %}
  
 
- <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+ <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,6 +64,8 @@ body {
 
 {% block body %}
     <section id="body">
+
+
         <div class="container wrapper padding">
         {% block content %}{% endblock %}
         </div>

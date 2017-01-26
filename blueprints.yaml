@@ -33,3 +33,33 @@ form:
         default: 'blue'
         validate:
           type: text
+
+    theme_stylesheet:
+      type: select
+      size: medium
+      classes: fancy
+      label: Theme Stylesheet
+      default: 'default'
+      options:
+        'default': "Default"
+        'cerulean': "Cerulean"
+        'cosmo': "Cosmo"
+        'cyborg': "Cyborg"
+        'darkly': "Darkly"
+        'flatly': "Flatly"
+        'journal': "Journal"
+        'litera': "Litera"
+        'lumen': "Lumen"
+        'lux': "Lux"
+        'materia': "Materia"
+        'minty': "Minty"
+        'pulse': "Pulse"
+        'sandstone': "Sandstone"
+        'simplex': "Simplex"
+        'slate': "Slate"
+        'solar': "Solar"
+        'spacelab': "Spacelab"
+        'superhero': "Superhero"
+        'united': "United"
+        'yeti': "Yeti"
+        
