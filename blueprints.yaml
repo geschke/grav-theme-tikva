@@ -62,4 +62,15 @@ form:
         'superhero': "Superhero"
         'united': "United"
         'yeti': "Yeti"
+
+    theme_file_logo:
+      type: file
+      label: Logo image in header
+      multiple: false
+      destination: 'theme@:/assets'
+      random_name: false
+      avoid_overwriting: false
+      filesize: 5
+      accept:
+        - image/*
         

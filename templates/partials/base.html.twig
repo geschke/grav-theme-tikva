@@ -47,6 +47,11 @@ body {
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+Test:
+      {% set site_logo = theme_config.theme_file_logo|first %}
+      {% if not site_logo %}foooo{% endif %}
+      {{ site_logo.path }}
       <a class="navbar-brand __logo __left" href="{{ base_url == '' ? '/' : base_url }}">
                 <i class="fa fa-rebel"></i>
                 {{ config.site.title }}
