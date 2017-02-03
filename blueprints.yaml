@@ -66,11 +66,26 @@ form:
     theme_file_logo:
       type: file
       label: Logo image in header
-      multiple: false
-      destination: 'theme@:/assets'
+      multiple: false 
+      destination: 'user/pages/images'
       random_name: false
       avoid_overwriting: false
       filesize: 5
       accept:
         - image/*
+        
+
+    footer_columns:
+      type: select
+      size: medium
+      classes: fancy
+      label: Number of Columns in Footer
+      description: Set number of columns available in footer of a page. Use the "footer" folder in the page structure to add content.
+      default: '1'
+      options:
+        '1': "1"
+        '2': "2"
+        '3': "3"
+        '4': "4"
+        '6': "6"
         

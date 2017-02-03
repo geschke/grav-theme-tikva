@@ -77,6 +77,20 @@ body {
 {% endblock %}
 
 {% block footer %}
+<div class="container">
+<footer>
+    <div class="row">
+    {% if theme_config.footer_columns %}
+        {% for column in 1..theme_config.footer_columns %}
+            {% set colnum = (12 // theme_config.footer_columns)  %}
+            {% include 'partials/footer_column.html.twig' %}
+        {% endfor %}
+    {% endif %}
+   
+    </div>
+</footer>
+</div>
+
     <div class="footer text-center">
         <div class="container">
         <div class="row wrapper padding">
