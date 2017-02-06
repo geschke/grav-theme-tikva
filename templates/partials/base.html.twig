@@ -31,6 +31,9 @@
 body {
   padding-top: 60px;
 }
+{% if theme_config.footer_color_bg %}
+    .footer-container { background-color: {{ theme_config.footer_color_bg }} }; 
+{% endif %}
     </style>
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
@@ -54,7 +57,7 @@ body {
       {% set site_logo = theme_config.theme_file_logo|first %}
       <a class="navbar-brand __logo __left" href="{{ base_url == '' ? '/' : base_url }}">
       {% if site_logo %}
-      <img src="{{ site_logo.path }}" />&nbsp;
+      <img src="/{{ site_logo.path }}" />&nbsp;
       {% endif %}
       {{ config.site.title }}
             </a>
@@ -80,31 +83,23 @@ body {
 {% endblock %}
 
 {% block footer %}
+<div class="footer-container" style="{% if theme_config.footer_color_fg %}color: {{ theme_config.footer_color_fg }};{% endif %}">
 <div class="container">
 <footer>
 
-</p>
     <div class="row">
     {% if theme_config.footer_columns %}
         {% for column in 1..theme_config.footer_columns %}
             {% set colnum = (12 // theme_config.footer_columns)  %}
             {% set fcol = attribute(footer_collection,'current') %}
             {% set next = attribute(footer_collection,'next') %}
-            
             {% include 'partials/footer_column.html.twig' %}
-            
         {% endfor %}
     {% endif %}
-
-{# for p in footer_collection %}
-<h2>{{ p.title }}</h2>
-{{ p.summary }}
-{{ dump(p)}}
-{% endfor #}
     </div>
 </footer>
 </div>
-
+</div>
     <div class="footer text-center">
         <div class="container">
         <div class="row wrapper padding">

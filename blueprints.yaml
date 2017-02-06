@@ -7,7 +7,7 @@ author:
   email: ralf@kuerbis.org
 homepage: https://github.com/geschke/grav-theme-tikva
 demo: http://www.geschke.net
-keywords: grav, theme, etc
+keywords: tikva, grav, theme, core, modern, responsive, bootstrap
 bugs: https://github.com/geschke/grav-theme-tikva/issues
 readme: https://github.com/geschke/grav-theme-tikva/blob/develop/README.md
 license: MIT
@@ -63,6 +63,18 @@ form:
         'united': "United"
         'yeti': "Yeti"
 
+    theme_adjust_header:
+        type: text
+        size: medium
+        label: Adjust Header
+        description: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. 
+        default: 0
+        validate:
+          type: int
+          min: 0
+          max: 1000 
+
+
     theme_file_logo:
       type: file
       label: Logo image in header
@@ -88,4 +100,16 @@ form:
         '3': "3"
         '4': "4"
         '6': "6"
+
+    footer_color_fg:
+      type: colorpicker
+      label: Choose footer font color
+      description: Set empty field for default color
+
+    footer_color_bg:
+      type: colorpicker
+      label: Choose footer background color
+      description: Set empty field for default color
+
+
         
