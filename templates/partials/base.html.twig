@@ -100,15 +100,20 @@ body {
 </footer>
 </div>
 </div>
-    <div class="footer text-center">
-        <div class="container">
+
+{% if theme_config.subfooter.enabled %}
+<div class="container">
+    <div class="footer">
         <div class="row wrapper padding">
-            <div class="col-xs-12 col-md-8">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+            <div class="col-xs-12 col-md-12">
+            {% if theme_config.subfooter_content %}
+            <p>{{ theme_config.subfooter_content|markdown }}</p>
+            {% endif %}
             </div>
         </div>
-        </div>
     </div>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block bottom %}

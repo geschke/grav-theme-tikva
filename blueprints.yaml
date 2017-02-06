@@ -111,5 +111,22 @@ form:
       label: Choose footer background color
       description: Set empty field for default color
 
+    subfooter.enabled:
+        type: toggle
+        label: Show subfooter
+        description: Show the content below the footer. 
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED 
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+
+    subfooter_content:
+      type: editor
+      size: medium
+      label: Subfooter content
+      default: ""
 
         
