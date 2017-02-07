@@ -29,8 +29,13 @@
  <style>
         /* Move down content because we have a fixed navbar that is 50px tall */
 body {
+    {% if theme_config.theme_adjust_header != 0 %}
+    padding-top: {{ 60 + theme_config.theme_adjust_header }}px;
+    {% else %}
   padding-top: 60px;
+    {% endif %}
 }
+
 {% if theme_config.footer_color_bg %}
     .footer-container { background-color: {{ theme_config.footer_color_bg }} }; 
 {% endif %}
