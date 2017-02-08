@@ -11,10 +11,17 @@ class Tikva extends Theme
     {
         return [
             'onThemeInitialized' => ['onThemeInitialized', 0],
+            //'onGetPageTemplates' => ['onGetPageTemplates', 0]
         ];
     }
 
-   
+    public function onGetPageTemplates($event)
+    {
+        $types = $event->types;
+        $locator = Grav::instance()['locator'];
+        //$types->scanBlueprints($locator->findResource('plugin://' . $this->name . '/blueprints'));
+        $types->scanTemplates($locator->findResource('themes://' . $this->name . '/templates'));
+    }
 
     public function onThemeInitialized()
     {
