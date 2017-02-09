@@ -12,26 +12,27 @@ class Tikva extends Theme
         return [
             'onThemeInitialized' => ['onThemeInitialized', 0],
             //'onGetPageTemplates' => ['onGetPageTemplates', 0]
-            'onAdminAfterSave' => ['onAdminAfterSave']
+            //'onAdminAfterSave' => ['onAdminAfterSave']
         ];
     }
 
-    public function onAdminAfterSave() 
+/*    public function onAdminAfterSave() 
     {
          $this->grav['debugger']->addMessage("onAdminAfterSave");
          $this->grav['debugger']->addMessage("Test");
         $this->grav['log']->debug('Test from Tikva');
          
     }
+*/
 
-    public function onGetPageTemplates($event)
+/*    public function onGetPageTemplates($event)
     {
         $types = $event->types;
         $locator = Grav::instance()['locator'];
         //$types->scanBlueprints($locator->findResource('plugin://' . $this->name . '/blueprints'));
         //$types->scanTemplates($locator->findResource('themes://' . $this->name . '/templates'));
     }
-
+*/
     public function onThemeInitialized()
     {
         if ($this->isAdmin()) {
