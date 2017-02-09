@@ -1,6 +1,7 @@
 title: default
 '@extends':
     type: default
+    context: blueprints://pages
 
 form:
   fields:
@@ -8,7 +9,7 @@ form:
       type: tabs
       active: 1
       fields:
-        content:
+        advanced:
           fields:
             header.an_example_text_field:
               type: text
