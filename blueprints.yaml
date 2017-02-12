@@ -76,7 +76,18 @@ form:
         validate:
           type: int
           min: 0
-          max: 1000 
+          max: 1000
+
+    navbar.invert:
+        type: toggle
+        label: Invert navigation bar
+        highlight: 1
+        default: 0
+        options:
+          1: PLUGIN_ADMIN.ENABLED 
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
 
 
     theme_file_logo:
