@@ -39,7 +39,9 @@ body {
     </style>
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
-              {% do assets.add('theme://js/bootstrap/bootstrap.min.js') %}
+        {% do assets.add('theme://js/tether.min.js') %}
+
+        {% do assets.add('theme://js/bootstrap/bootstrap.min.js') %}
 
     {% endblock %}
     {{ assets.js() }}
