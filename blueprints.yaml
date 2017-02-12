@@ -43,7 +43,9 @@ form:
       options:
         'default': "Default"
         'cerulean': "Cerulean"
+        'cloudhouse': "Cloudhouse"
         'cosmo': "Cosmo"
+        'csiogold': 'Csiogold'
         'cyborg': "Cyborg"
         'darkly': "Darkly"
         'flatly': "Flatly"
@@ -55,6 +57,8 @@ form:
         'minty': "Minty"
         'pulse': "Pulse"
         'sandstone': "Sandstone"
+        'schwoblue': "Schwoblue"
+        'schwobrown': "Schwobrown"
         'simplex': "Simplex"
         'slate': "Slate"
         'solar': "Solar"
