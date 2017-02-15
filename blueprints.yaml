@@ -101,6 +101,17 @@ form:
       accept:
         - image/*
         
+    favicon_file:
+      type: file
+      destination: 'user/pages/images'
+      label: Upload a favicon
+      multiple: false
+      avoid_overwriting: true
+      filesize: 5
+      acccept:
+        - .ico
+        - .png
+        - .gif
 
     footer_columns:
       type: select

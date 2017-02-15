@@ -10,7 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    {% set favicon_file = theme_config.favicon_file|first %}
+      {% if favicon_file %}
+      <link rel="icon" type="{{ favicon_file.type }}" href="/{{ favicon_file.path }}" />
+      {% else %}
+       <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+      {% endif %}
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
