@@ -26,14 +26,6 @@ form:
         validate:
           type: bool
 
-    color:
-        type: text
-        size: medium
-        label: Color
-        default: 'blue'
-        validate:
-          type: text
-
     theme_stylesheet:
       type: select
       size: medium
@@ -88,6 +80,27 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+
+    navbar_background:
+      type: select
+      size: medium
+      classes: fancy
+      label: Navigation bar background
+      default: 'default'
+      options:
+        'default': "Default"
+        'bg-primary': "bg-primary"
+        'bg-success': "bg-success"
+        'bg-info': "bg-info"
+        'bg-warning': "bg-warning"
+        'bg-danger': "bg-danger"
+        'bg-inverse': "bg-inverse"
+        'bg-faded': "bg-faded"
+
+    navbar_background_color:
+      type: colorpicker
+      label: OR set custom navigation bar background color
+      description: If color is set, it will be used for background. Set empty for above selection.
 
 
     theme_file_logo:

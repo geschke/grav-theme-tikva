@@ -57,8 +57,17 @@ body {
 
 {% block header %}
  
-
- <nav class="navbar navbar-toggleable-md {{ theme_config.navbar.invert ? 'navbar-inverse' : 'navbar-light' }} fixed-top bg-primary">
+{% if theme_config.navbar_background_color %}
+{% set navbar_style = "style=\"background-color: #{theme_config.navbar_background_color}\"" %}
+{% set navbar_bg = '' %}
+{% elseif theme_config.navbar_background and theme_config.navbar_background != 'default' %}
+{% set navbar_bg = theme_config.navbar_background %}
+{% set navbar_style = '' %}
+{% else %}
+{% set navbar_bg = 'bg-primary' %}
+{% set navbar_style='' %}
+{% endif %}
+ <nav class="navbar navbar-toggleable-md {{ theme_config.navbar.invert ? 'navbar-inverse' : 'navbar-light' }} fixed-top {{ navbar_bg }}" {{ navbar_style }}>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
