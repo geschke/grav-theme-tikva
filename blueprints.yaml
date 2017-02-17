@@ -1,12 +1,12 @@
 name: Tikva
 version: 0.1.0
-description: Tikva is a minimalistic Grav theme, based on Bootstrap framework
+description: Tikva is a minimalistic Grav theme, based on Bootstrap 4 (alpha) framework
 icon: rebel
 author:
   name: Ralf Geschke
   email: ralf@kuerbis.org
 homepage: https://github.com/geschke/grav-theme-tikva
-demo: http://www.geschke.net
+demo: https://www.geschke.net
 keywords: tikva, grav, theme, core, modern, responsive, bootstrap
 bugs: https://github.com/geschke/grav-theme-tikva/issues
 readme: https://github.com/geschke/grav-theme-tikva/blob/develop/README.md
@@ -26,7 +26,7 @@ form:
         validate:
           type: bool
 
-    theme_stylesheet:
+    theme.stylesheet:
       type: select
       size: medium
       classes: fancy
@@ -59,7 +59,7 @@ form:
         'united': "United"
         'yeti': "Yeti"
 
-    theme_adjust_header:
+    theme.adjust_header:
         type: text
         size: medium
         label: Adjust Header
@@ -81,7 +81,7 @@ form:
         validate:
           type: bool
 
-    navbar_background:
+    navbar.background:
       type: select
       size: medium
       classes: fancy
@@ -97,13 +97,13 @@ form:
         'bg-inverse': "bg-inverse"
         'bg-faded': "bg-faded"
 
-    navbar_background_color:
+    navbar.background_color:
       type: colorpicker
       label: OR set custom navigation bar background color
       description: If color is set, it will be used for background. Set empty for above selection.
 
 
-    theme_file_logo:
+    theme.file_logo:
       type: file
       label: Logo image in header
       multiple: false 
@@ -126,7 +126,7 @@ form:
         - .png
         - .gif
 
-    footer_columns:
+    footer.columns:
       type: select
       size: medium
       classes: fancy
@@ -140,12 +140,12 @@ form:
         '4': "4"
         '6': "6"
 
-    footer_color_fg:
+    footer.color_fg:
       type: colorpicker
       label: Choose footer font color
       description: Set empty field for default color
 
-    footer_color_bg:
+    footer.color_bg:
       type: colorpicker
       label: Choose footer background color
       description: Set empty field for default color
@@ -162,7 +162,7 @@ form:
         validate:
           type: bool
 
-    subfooter_content:
+    subfooter.content:
       type: editor
       size: medium
       label: Subfooter content

@@ -19,8 +19,8 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-    {% if theme_config.theme_stylesheet != 'default' %}
-        {% do assets.addCss("theme://css/bootswatch/#{ theme_config.theme_stylesheet }/bootstrap.min.css", 100) %}
+    {% if theme_config.theme.stylesheet != 'default' %}
+        {% do assets.addCss("theme://css/bootswatch/#{ theme_config.theme.stylesheet }/bootstrap.min.css", 100) %}
     {% else %}
         {% do assets.addCss('theme://css/bootstrap/bootstrap.min.css', 100) %}
     {% endif %}
@@ -31,15 +31,15 @@
  <style>
         /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    {% if theme_config.theme_adjust_header != 0 %}
-    padding-top: {{ 60 + theme_config.theme_adjust_header }}px;
+    {% if theme_config.theme.adjust_header != 0 %}
+    padding-top: {{ 60 + theme_config.theme.adjust_header }}px;
     {% else %}
   padding-top: 60px;
     {% endif %}
 }
 
-{% if theme_config.footer_color_bg %}
-    .footer-container { background-color: {{ theme_config.footer_color_bg }} }; 
+{% if theme_config.footer.color_bg %}
+    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
 {% endif %}
     </style>
     {% block javascripts %}
@@ -57,11 +57,11 @@ body {
 
 {% block header %}
  
-{% if theme_config.navbar_background_color %}
-{% set navbar_style = "style=\"background-color: #{theme_config.navbar_background_color}\"" %}
+{% if theme_config.navbar.background_color %}
+{% set navbar_style = "style=\"background-color: #{theme_config.navbar.background_color}\"" %}
 {% set navbar_bg = '' %}
-{% elseif theme_config.navbar_background and theme_config.navbar_background != 'default' %}
-{% set navbar_bg = theme_config.navbar_background %}
+{% elseif theme_config.navbar.background and theme_config.navbar.background != 'default' %}
+{% set navbar_bg = theme_config.navbar.background %}
 {% set navbar_style = '' %}
 {% else %}
 {% set navbar_bg = 'bg-primary' %}
@@ -72,8 +72,8 @@ body {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      {% set site_logo = theme_config.theme_file_logo|first %}
-      <a class="navbar-brand __logo __left" href="{{ base_url == '' ? '/' : base_url }}">
+      {% set site_logo = theme_config.theme.file_logo|first %}
+      <a class="navbar-brand " href="{{ base_url == '' ? '/' : base_url }}">
       {% if site_logo %}
       <img src="/{{ site_logo.path }}" />&nbsp;
       {% endif %}
@@ -101,15 +101,15 @@ body {
 {% endblock %}
 
 {% block footer %}
-<div class="footer-container" style="{% if theme_config.footer_color_fg %}color: {{ theme_config.footer_color_fg }};{% endif %}">
+<div class="footer-container" style="{% if theme_config.footer.color_fg %}color: {{ theme_config.footer.color_fg }};{% endif %}">
 <div class="container" style="padding-top: 20px;">
 <footer>
 
 {% set footer_collection = page.find('/footer').children.order('default', 'asc').slice(0, 6) %}
     <div class="row">
-    {% if theme_config.footer_columns %}
-        {% for column in 1..theme_config.footer_columns %}
-            {% set colnum = (12 // theme_config.footer_columns)  %}
+    {% if theme_config.footer.columns %}
+        {% for column in 1..theme_config.footer.columns %}
+            {% set colnum = (12 // theme_config.footer.columns)  %}
             {% set fcol = attribute(footer_collection,'current') %}
             {% set next = attribute(footer_collection,'next') %}
             {% include 'partials/footer_column.html.twig' %}
@@ -125,8 +125,8 @@ body {
     <div class="footer">
         <div class="row wrapper padding">
             <div class="col-xs-12 col-md-12">
-            {% if theme_config.subfooter_content %}
-            <p>{{ theme_config.subfooter_content|markdown }}</p>
+            {% if theme_config.subfooter.content %}
+            <p>{{ theme_config.subfooter.content|markdown }}</p>
             {% endif %}
             </div>
         </div>
