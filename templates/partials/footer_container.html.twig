@@ -1,0 +1,18 @@
+<div class="footer-container" style="{% if theme_config.footer.color_fg %}color: {{ theme_config.footer.color_fg }};{% endif %}">
+<div class="container" style="padding-top: 20px;">
+<footer>
+
+{% set footer_collection = page.find('/footer').children.order('default', 'asc').slice(0, 6) %}
+    <div class="row">
+    {% if theme_config.footer.columns %}
+        {% for column in 1..theme_config.footer.columns %}
+            {% set colnum = (12 // theme_config.footer.columns)  %}
+            {% set fcol = attribute(footer_collection,'current') %}
+            {% set next = attribute(footer_collection,'next') %}
+            {% include 'partials/footer_column.html.twig' %}
+        {% endfor %}
+    {% endif %}
+    </div>
+</footer>
+</div>
+</div>

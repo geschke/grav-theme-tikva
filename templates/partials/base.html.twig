@@ -101,38 +101,8 @@ body {
 {% endblock %}
 
 {% block footer %}
-<div class="footer-container" style="{% if theme_config.footer.color_fg %}color: {{ theme_config.footer.color_fg }};{% endif %}">
-<div class="container" style="padding-top: 20px;">
-<footer>
-
-{% set footer_collection = page.find('/footer').children.order('default', 'asc').slice(0, 6) %}
-    <div class="row">
-    {% if theme_config.footer.columns %}
-        {% for column in 1..theme_config.footer.columns %}
-            {% set colnum = (12 // theme_config.footer.columns)  %}
-            {% set fcol = attribute(footer_collection,'current') %}
-            {% set next = attribute(footer_collection,'next') %}
-            {% include 'partials/footer_column.html.twig' %}
-        {% endfor %}
-    {% endif %}
-    </div>
-</footer>
-</div>
-</div>
-
-{% if theme_config.subfooter.enabled %}
-<div class="container">
-    <div class="footer">
-        <div class="row wrapper padding">
-            <div class="col-xs-12 col-md-12">
-            {% if theme_config.subfooter.content %}
-            <p>{{ theme_config.subfooter.content|markdown }}</p>
-            {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
+{% include 'partials/footer_container.html.twig' %}
+{% include 'partials/subfooter_container.html.twig' %}
 {% endblock %}
 
 {% block bottom %}
