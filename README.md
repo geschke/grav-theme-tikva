@@ -56,11 +56,7 @@ Manually updating Tikva is pretty simple. Here is what you will need to do to ge
 
 * Preinstalled [Bootswatch|(https://bootswatch.com/) Bootstrap 4 themes 
 * Lightweight and minimal for optimal performance
-*  
 
-### Supported Page Templates
-
-* tbd
 
 ## Setup
 
@@ -74,6 +70,58 @@ If you want to set Tikva as the default theme, you can do so by following these 
 
 Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **tikva** folder.
 
+
+## Configuration options
+
+You can reach all configuration options in the admin interface, so it's recommended
+to use it. 
+
+### Footer support
+
+Most websites need a special area at the bottom with common contents - the footer. 
+The Tikva theme supports this in a flexible, but simple manner. In the admin interface (or by the option "footer.columns") you can set the number of columns the footer should have. 
+Due to Bootstrap's grid system you can choose between 1, 2, 3, 4 or 6 columns.
+
+Every column is represented by a special page, so the content can be edited with the usual interfaces (or with the help of a text/markdown editor). 
+
+The simplest way to create the footer is to use the admin user interface. 
+
+At first, create a folder named "footer" in the page area.
+
+The name is important, so please use the folder name "footer". 
+This folder must not be publish, so please switch the "published" option to "no" and save the page. 
+
+At last, create the content area pages. 
+
+As parent page use the previously created "footer" folder. The page template should be "footer". 
+After finished you can edit the footer sections in the same manner as you edit pages. 
+
+### Predefined themes
+
+Tikva offers 25 themes! Most of them originate in [Bootswatch](https://bootswatch.com/) by Thomas Park. But you can also customize header and footer settings by the following options.
+
+* navbar.invert: true/false - Invert navigation bar. This changes the text color. 
+* navbar.background: Choose between seven options, in Bootstrap they are described as ".bg- * utils". 
+* navbar.background_color: If the previous option is not enough, you can pick your own color. 
+* footer.color_fg: Choose the foreground, i.e. text color used in the footer. 
+* footer.color_bg: Choose the background color used in the footer. 
+
+### Miscellaneous Settings
+
+* theme.adjust_header: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. As an example, to add 20 pixel, enter "20", the value has to be numeric. 
+
+* dropdown.enabled: true/false - show dropdown links in navigation 
+* theme.file_logo: Logo image in header. 
+* favicon_file: Change the favicon by uploading your own. 
+
+Both image files have to be stored in a folder in _user/pages/images/_:
+
+* subfooter.enabled: true/false: Show the content below the footer.
+* subfooter.content: This is the content of the subfooter area. The default value is a hint to Grav CMS and the theme, but you can modify the content fitting your needs. 
+
+
 ## Thanks
 
-* Thanks to Thomas Park for Bootswatch Bootstrap themes
+* all Grav developers and contributors
+* the [Bootstrap developers](https://github.com/orgs/twbs/people)
+* [Thomas Park](http://thomaspark.co/) for Bootswatch theme collection

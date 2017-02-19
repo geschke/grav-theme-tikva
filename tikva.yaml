@@ -1,4 +1,5 @@
 enabled: true
-subfooter.content: '[Grav](http://getgrav.org) was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by [RocketTheme](http://www.rockettheme.com). Theme Tikva by [Ralf Geschke](https://www.geschke.net) .'
+subfooter:
+  content: '[Grav](http://getgrav.org) was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by [RocketTheme](http://www.rockettheme.com). Theme Tikva by [Ralf Geschke](https://www.geschke.net) .'
 dropdown:
   enabled: true
