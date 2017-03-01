@@ -1,5 +1,5 @@
 name: Tikva
-version: 0.1.0
+version: 0.1.1
 description: Tikva is a minimalistic Grav theme, based on Bootstrap 4 (alpha) framework
 icon: rebel
 author:
@@ -9,163 +9,228 @@ homepage: https://github.com/geschke/grav-theme-tikva
 demo: https://tikva-demo.kuerbis.org
 keywords: tikva, grav, theme, core, modern, responsive, bootstrap
 bugs: https://github.com/geschke/grav-theme-tikva/issues
-readme: https://github.com/geschke/grav-theme-tikva/blob/develop/README.md
+readme: https://github.com/geschke/grav-theme-tikva/blob/master/README.md
 license: MIT
 
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED 
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+    tabs:
+      type: tabs
+      active: 1
 
-    theme.stylesheet:
-      type: select
-      size: medium
-      classes: fancy
-      label: Theme Stylesheet
-      default: 'default'
-      options:
-        'default': "Default"
-        'cerulean': "Cerulean"
-        'cloudhouse': "Cloudhouse"
-        'cosmo': "Cosmo"
-        'csiogold': 'Csiogold'
-        'cyborg': "Cyborg"
-        'darkly': "Darkly"
-        'flatly': "Flatly"
-        'journal': "Journal"
-        'litera': "Litera"
-        'lumen': "Lumen"
-        'lux': "Lux"
-        'materia': "Materia"
-        'minty': "Minty"
-        'pulse': "Pulse"
-        'sandstone': "Sandstone"
-        'schwoblue': "Schwoblue"
-        'schwobrown': "Schwobrown"
-        'simplex': "Simplex"
-        'slate': "Slate"
-        'solar': "Solar"
-        'spacelab': "Spacelab"
-        'superhero': "Superhero"
-        'united': "United"
-        'yeti': "Yeti"
-
-    theme.adjust_header:
-        type: text
-        size: medium
-        label: Adjust Header
-        description: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. 
-        default: 0
-        validate:
-          type: int
-          min: 0
-          max: 1000
-
-    navbar.invert:
-        type: toggle
-        label: Invert navigation bar
-        highlight: 1
-        default: 0
-        options:
-          1: PLUGIN_ADMIN.ENABLED 
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
-
-    navbar.background:
-      type: select
-      size: medium
-      classes: fancy
-      label: Navigation bar background
-      default: 'default'
-      options:
-        'default': "Default"
-        'bg-primary': "bg-primary"
-        'bg-success': "bg-success"
-        'bg-info': "bg-info"
-        'bg-warning': "bg-warning"
-        'bg-danger': "bg-danger"
-        'bg-inverse': "bg-inverse"
-        'bg-faded': "bg-faded"
-
-    navbar.background_color:
-      type: colorpicker
-      label: OR set custom navigation bar background color
-      description: If color is set, it will be used for background. Set empty for above selection.
-
-
-    theme.file_logo:
-      type: file
-      label: Logo image in header
-      multiple: false 
-      destination: 'user/pages/images'
-      random_name: false
-      avoid_overwriting: false
-      filesize: 5
-      accept:
-        - image/*
+      fields:
+        content:
+          type: tab
+          title: General Options
         
-    favicon_file:
-      type: file
-      destination: 'user/pages/images'
-      label: Upload a favicon
-      multiple: false
-      avoid_overwriting: true
-      filesize: 5
-      acccept:
-        - .ico
-        - .png
-        - .gif
+          fields:
+            dropdown.enabled:
+              type: toggle
+              label: Dropdown in Menu
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED 
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
 
-    footer.columns:
-      type: select
-      size: medium
-      classes: fancy
-      label: Number of Columns in Footer
-      description: Set number of columns available in footer of a page. Use the "footer" folder in the page structure to add content.
-      default: '1'
-      options:
-        '1': "1"
-        '2': "2"
-        '3': "3"
-        '4': "4"
-        '6': "6"
+            theme.stylesheet:
+              type: select
+              size: medium
+              classes: fancy
+              label: Theme Stylesheet
+              default: 'default'
+              options:
+                'default': "Default"
+                'cerulean': "Cerulean"
+                'cloudhouse': "Cloudhouse"
+                'cosmo': "Cosmo"
+                'csiogold': 'Csiogold'
+                'cyborg': "Cyborg"
+                'darkly': "Darkly"
+                'flatly': "Flatly"
+                'journal': "Journal"
+                'litera': "Litera"
+                'lumen': "Lumen"
+                'lux': "Lux"
+                'materia': "Materia"
+                'minty': "Minty"
+                'pulse': "Pulse"
+                'sandstone': "Sandstone"
+                'schwoblue': "Schwoblue"
+                'schwobrown': "Schwobrown"
+                'simplex': "Simplex"
+                'slate': "Slate"
+                'solar': "Solar"
+                'spacelab': "Spacelab"
+                'superhero': "Superhero"
+                'united': "United"
+                'yeti': "Yeti"
 
-    footer.color_fg:
-      type: colorpicker
-      label: Choose footer font color
-      description: Set empty field for default color
+            theme.adjust_header:
+              type: text
+              size: medium
+              label: Adjust Header
+              description: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. 
+              default: 0
+              validate:
+                type: int
+                min: 0
+                max: 1000
 
-    footer.color_bg:
-      type: colorpicker
-      label: Choose footer background color
-      description: Set empty field for default color
+            navbar.invert:
+              type: toggle
+              label: Invert navigation bar
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED 
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
 
-    subfooter.enabled:
-        type: toggle
-        label: Show subfooter
-        description: Show the content below the footer. 
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED 
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+            navbar.background:
+              type: select
+              size: medium
+              classes: fancy
+              label: Navigation bar background
+              default: 'default'
+              options:
+                'default': "Default"
+                'bg-primary': "bg-primary"
+                'bg-success': "bg-success"
+                'bg-info': "bg-info"
+                'bg-warning': "bg-warning"
+                'bg-danger': "bg-danger"
+                'bg-inverse': "bg-inverse"
+                'bg-faded': "bg-faded"
 
-    subfooter.content:
-      type: editor
-      size: medium
-      label: Subfooter content
-      default: ""
+            navbar.background_color:
+              type: colorpicker
+              label: OR set custom navigation bar background color
+              description: If color is set, it will be used for background. Set empty for above selection.
 
+
+            theme.file_logo:
+              type: file
+              label: Logo image in header
+              multiple: false 
+              destination: 'user/pages/images'
+              random_name: false
+              avoid_overwriting: false
+              filesize: 5
+              accept:
+                - image/*
+            
+            favicon_file:
+              type: file
+              destination: 'user/pages/images'
+              label: Upload a favicon
+              multiple: false
+              avoid_overwriting: true
+              filesize: 5
+              acccept:
+                - .ico
+                - .png
+                - .gif
+
+            
+
+      
+        footer:
+          type: tab
+          title: Footer Options
         
+          fields: 
+          
+            footer.columns:
+              type: select
+              size: medium
+              classes: fancy
+              label: Number of Columns in Footer
+              description: Set number of columns available in footer of a page. Use the "footer" folder in the page structure to add content.
+              default: '1'
+              options:
+                '1': "1"
+                '2': "2"
+                '3': "3"
+                '4': "4"
+                '6': "6"
+
+            footer.color_fg:
+              type: colorpicker
+              label: Choose footer font color
+              description: Set empty field for default color
+
+            footer.color_bg:
+              type: colorpicker
+              label: Choose footer background color
+              description: Set empty field for default color
+
+            subfooter.enabled:
+                type: toggle
+                label: Show subfooter
+                description: Show the content below the footer. 
+                highlight: 1
+                default: 1
+                options:
+                  1: PLUGIN_ADMIN.ENABLED 
+                  0: PLUGIN_ADMIN.DISABLED
+                validate:
+                  type: bool
+
+            subfooter.content:
+              type: editor
+              size: medium
+              label: Subfooter content
+              default: ""
+
+
+        socialmedia:
+          type: tab
+          title: Social Media
+
+          fields:
+            socialmedia.buttons.enabled:
+              type: toggle
+              label: Show Social Media Buttons
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED 
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            
+            socialmedia.buttons.position:
+              type: toggle
+              label: Button Position
+              highlight: 1
+              default: 1
+              options:
+                1: Between content and footer
+                2: Below Footer
+              
+            socialmedia.buttons.alignment:
+              type: toggle
+              label: Button Alignment
+              highlight: 1
+              default: 1
+              options:
+                1: Left
+                2: Centered
+                3: Right
+
+
+            socialmedia.buttons.size:
+              type: toggle
+              label: Button Size
+              highlight: 1
+              default: 2
+              options:
+                1: Small
+                2: Medium
+                3: Large
+                
