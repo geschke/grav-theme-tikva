@@ -100,8 +100,11 @@ body {
     </section>
 {% endblock %}
 
+{% include 'partials/socialmedia.html.twig' with {'socialmedia_position': '1'} %}
 {% block footer %}
 {% include 'partials/footer_container.html.twig' %}
+{% include 'partials/socialmedia.html.twig' with {'socialmedia_position': '2'} %}
+
 {% include 'partials/subfooter_container.html.twig' %}
 {% endblock %}
 

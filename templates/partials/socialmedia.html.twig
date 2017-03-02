@@ -1,0 +1,40 @@
+
+{% macro build_socialmedia_button(socialUrl, socialIcon, buttonSize, buttonType) %}
+{{ socialUrl }}
+{% endmacro %}
+
+{% macro display_socialmedia_buttons(currentPosition,config) %}
+Test
+{{ currentPosition }}
+{{ config.dropdown.enabled }}
+{% if config.buttons.enabled %}
+socialmedia buttons enabled
+{{ currentPosition }}
+<div class="row">
+<div class="container">
+    <div class="col-md-12 social-media-buttons"> 
+        <div style="text-align: <?php echo $align; ?>;">
+            
+            
+            $socialOutput = '';
+            foreach ($socialButtons as $socialOption => $socialIcon) {
+                $socialOutput .= tikva_build_social_button($socialOption, $socialIcon, $buttonSize, $buttonType);
+            }
+            echo $socialOutput;
+            ?>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endif %}
+
+
+{% endmacro %}
+
+
+{{ _self.display_socialmedia_buttons(socialmedia_position, theme_config.socialmedia) }}
+
+   
+
+

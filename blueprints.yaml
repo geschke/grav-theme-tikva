@@ -193,44 +193,161 @@ form:
           title: Social Media
 
           fields:
-            socialmedia.buttons.enabled:
-              type: toggle
-              label: Show Social Media Buttons
-              highlight: 1
-              default: 0
-              options:
-                1: PLUGIN_ADMIN.ENABLED 
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
+            tabs:
+              type: tabs
+              active: 1
+
+              fields:
+                options:
+                  type: tab
+                  title: Options
+
+                  fields:
+
+                    socialmedia.buttons.enabled:
+                      type: toggle
+                      label: Show Social Media Buttons
+                      highlight: 1
+                      default: 0
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED 
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
             
-            socialmedia.buttons.position:
-              type: toggle
-              label: Button Position
-              highlight: 1
-              default: 1
-              options:
-                1: Between content and footer
-                2: Below Footer
-              
-            socialmedia.buttons.alignment:
-              type: toggle
-              label: Button Alignment
-              highlight: 1
-              default: 1
-              options:
-                1: Left
-                2: Centered
-                3: Right
+                    socialmedia.buttons.position:
+                      type: toggle
+                      label: Button Position
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: Between content and footer
+                        2: Below Footer
+                      
+                    socialmedia.buttons.alignment:
+                      type: toggle
+                      label: Button Alignment
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: Left
+                        2: Centered
+                        3: Right
 
 
-            socialmedia.buttons.size:
-              type: toggle
-              label: Button Size
-              highlight: 1
-              default: 2
-              options:
-                1: Small
-                2: Medium
-                3: Large
-                
+                    socialmedia.buttons.size:
+                      type: toggle
+                      label: Button Size
+                      highlight: 1
+                      default: 2
+                      options:
+                        1: Small
+                        2: Medium
+                        3: Large
+                        
+                    socialmedia.buttons.type:
+                      type: toggle
+                      label: Button Type
+                      highlight: 1
+                      default: 2
+                      options:
+                        1: Circle
+                        2: Square
+
+                    socialmedia.color.fg:
+                      type: colorpicker
+                      label: Button Foreground (Icon) Color
+                      description: "Pick a foreground color for the Social Media icon (default: transparent, i.e. use color defined in the theme stylesheet). Leave field empty for default color."
+
+                    socialmedia.color.bg:
+                      type: colorpicker
+                      label: Button Background Color
+                      description: "Pick a background color for the Social Media icon (default: transparent, i.e. use color defined in the theme stylesheet). Leave field empty for default color."
+
+                    socialmedia.color.bg_mouseover:
+                      type: colorpicker
+                      label: Button Background Mouseover Color
+                      description: "Pick a background color for the Social Media icon when hovered (default: transparent, i.e. use color defined in the theme stylesheet). Leave field empty for default color."
+
+
+                buttons:
+                  type: tab
+                  title: Social Media Buttons
+                  
+                  fields:
+                    socialmedia.button.facebook:
+                      type: text
+                      label: Facebook
+                      description: Enter the complete Facebook profile page URL (please include http or https!)
+
+                    socialmedia.button.github:
+                      type: text
+                      label: GitHub
+                      description: Enter the complete GitHub profile page URL (please include http or https!)
+
+                    socialmedia.button.google:
+                      type: text
+                      label: Google+
+                      description: Enter the complete Google+ profile page URL (please include http or https!)
+
+                    socialmedia.button.instagram:
+                      type: text
+                      label: Instagram
+                      description: Enter the complete Instagram profile page URL (please include http or https!)
+
+                    socialmedia.button.linkedin:
+                      type: text
+                      label: LinkedIn
+                      description: Enter the complete LinkedIn profile page URL (please include http or https!)
+
+                    socialmedia.button.slideshare:
+                      type: text
+                      label: Slideshare
+                      description: Enter the complete Slideshare profile page URL (please include http or https!)
+
+                    socialmedia.button.snapchat:
+                      type: text
+                      label: Snapchat
+                      description: Enter the complete Snapchat profile page URL (please include http or https!)
+
+                    socialmedia.button.twitter:
+                      type: text
+                      label: Twitter
+                      description: Enter the complete Twitter profile page URL (please include http or https!)
+                    
+                    socialmedia.button.vine:
+                      type: text
+                      label: Vine
+                      description: Enter the complete Vine profile page URL (please include http or https!)
+
+                    socialmedia.button.youtube:
+                      type: text
+                      label: YouTube
+                      description: Enter the complete YouTube profile page URL (please include http or https!)
+
+                    socialmedia.buttoncustomlist:
+                      type: list
+                      style: vertical
+                      label: Add more social media sites
+                      fields:
+                        .name:
+                          type: text
+                          label: Site name
+                          validate: 
+                            required: true
+                        .icon:
+                          type: text
+                          label: Font Awesome Icon
+                          validate: 
+                            required: true
+                        .url:
+                          type: text
+                          label: Page URL
+                          validate: 
+                            required: true
+
+
+  
+
+
+                 
