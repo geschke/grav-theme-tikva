@@ -230,9 +230,9 @@ form:
                       highlight: 1
                       default: 1
                       options:
-                        1: Left
-                        2: Centered
-                        3: Right
+                        left: Left
+                        center: Centered
+                        right: Right
 
 
                     socialmedia.buttons.size:
@@ -285,7 +285,7 @@ form:
                       label: GitHub
                       description: Enter the complete GitHub profile page URL (please include http or https!)
 
-                    socialmedia.button.google:
+                    socialmedia.button.google-plus:
                       type: text
                       label: Google+
                       description: Enter the complete Google+ profile page URL (please include http or https!)
@@ -319,6 +319,11 @@ form:
                       type: text
                       label: Vine
                       description: Enter the complete Vine profile page URL (please include http or https!)
+
+                    socialmedia.button.xing:
+                      type: text
+                      label: Xing
+                      description: Enter the complete Xing profile page URL (please include http or https!)
 
                     socialmedia.button.youtube:
                       type: text

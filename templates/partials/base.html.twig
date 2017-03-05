@@ -25,6 +25,7 @@
         {% do assets.addCss('theme://css/bootstrap/bootstrap.min.css', 100) %}
     {% endif %}
         {% do assets.addCss('theme://css/font-awesome/css/font-awesome.min.css', 99) %}
+       {% do assets.addCss('theme://css/default.css', 98) %}
        {# do assets.addCss('theme://css/custom.css', 98) #}
     {% endblock %}
     {{ assets.css() }}
@@ -41,6 +42,18 @@ body {
 {% if theme_config.footer.color_bg %}
     .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
 {% endif %}
+{% if theme_config.socialmedia.color.bg %}
+    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
+{% endif %}
+{% if theme_config.socialmedia.color.bg_mouseover %}
+    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
+{% endif %}
+{% if theme_config.socialmedia.color.fg %}
+    .innersocial { color: {{ theme_config.socialmedia.color.fg }} !important; }; 
+    .foobar { color: {{ theme_config.socialmedia.color.fg }} !important; }; 
+
+{% endif %}
+
     </style>
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}

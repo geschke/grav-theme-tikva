@@ -1,40 +1,69 @@
 
-{% macro build_socialmedia_button(socialUrl, socialIcon, buttonSize, buttonType) %}
-{{ socialUrl }}
+{% macro build_socialmedia_button(site, url, size, type, color) %}
+
+    {% if size == 1 %}
+        {% set fasize = ' ' %}
+    {% elseif size == 2 %}
+        {% set fasize = ' fa-lg ' %}
+    {% elseif size == 3 %}
+        {% set fasize = ' fa-2x ' %}
+    {% else %}
+        {% set fasize = ' ' %}
+    {% endif %}
+            
+    <a target="_blank" href="{{ url }}"><span class="fa-stack {{ fasize }} "><i stylebg  class="fa {{ type == 2 ? 'fa-square' : 'fa-circle' }} fa-stack-2x innersocialbg"></i><i %s  class="fa fa-{{ site }} fa-stack-1x text-white innersocial"></i></span></a>
+
 {% endmacro %}
 
+{% macro build_socialmedia_custombutton(bcustom, size, type, color) %}
+
+    {% if size == 1 %}
+        {% set fasize = ' ' %}
+    {% elseif size == 2 %}
+        {% set fasize = ' fa-lg ' %}
+    {% elseif size == 3 %}
+        {% set fasize = ' fa-2x ' %}
+    {% else %}
+        {% set fasize = ' ' %}
+    {% endif %}
+
+        
+    
+    <a target="_blank" href="{{ bcustom.url }}"><span class="fa-stack {{ fasize }} "><i class="fa {{ type == 2 ? 'fa-square' : 'fa-circle' }} fa-stack-2x innersocialbg"></i><i {% if color.fg %}style="color: {{ color.fg}};"{% endif %} class="fa {{ bcustom.icon }} fa-stack-1x {% if not color.fg %}text-white {% endif %}"></i></span></a>
+
+{% endmacro %}
+
+
 {% macro display_socialmedia_buttons(currentPosition,config) %}
-Test
-{{ currentPosition }}
-{{ config.dropdown.enabled }}
-{% if config.buttons.enabled %}
-socialmedia buttons enabled
-{{ currentPosition }}
+
+    {% if config.buttons.position == currentPosition %}
+
 <div class="row">
 <div class="container">
     <div class="col-md-12 social-media-buttons"> 
-        <div style="text-align: <?php echo $align; ?>;">
+        <div style="text-align: {{ config.buttons.alignment }};">
             
+            {% for bcustom in config.buttoncustomlist %}
+            {{ _self.build_socialmedia_custombutton(bcustom, config.buttons.size, config.buttons.type, config.color) }}
+
+            {% endfor %}
+            {% for bsite, burl in config.button %}
+            {{ _self.build_socialmedia_button(bsite, burl, config.buttons.size, config.buttons.type, config.color) }}
+            {% endfor %}
             
-            $socialOutput = '';
-            foreach ($socialButtons as $socialOption => $socialIcon) {
-                $socialOutput .= tikva_build_social_button($socialOption, $socialIcon, $buttonSize, $buttonType);
-            }
-            echo $socialOutput;
-            ?>
         </div>
     </div>
 </div>
 </div>
-
-{% endif %}
+    {% endif %}
 
 
 {% endmacro %}
 
 
-{{ _self.display_socialmedia_buttons(socialmedia_position, theme_config.socialmedia) }}
-
+{% if theme_config.socialmedia.buttons.enabled %}
+    {{ _self.display_socialmedia_buttons(socialmedia_position, theme_config.socialmedia) }}
+{% endif %}
    
 
 
