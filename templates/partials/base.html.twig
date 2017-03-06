@@ -40,17 +40,25 @@ body {
 }
 
 {% if theme_config.footer.color_bg %}
-    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
+    .footer-container { background-color: {{ theme_config.footer.color_bg }} }
+
 {% endif %}
 {% if theme_config.socialmedia.color.bg %}
-    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
-{% endif %}
+
+.innersocialbg {
+    color: {{ theme_config.socialmedia.color.bg }} !important;
+    transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+}
+
 {% if theme_config.socialmedia.color.bg_mouseover %}
-    .footer-container { background-color: {{ theme_config.footer.color_bg }} }; 
+.socialhover {
+    color: {{ theme_config.socialmedia.color.bg_mouseover }} !important;
+}
 {% endif %}
-{% if theme_config.socialmedia.color.fg %}
-    .innersocial { color: {{ theme_config.socialmedia.color.fg }} !important; }; 
-    .foobar { color: {{ theme_config.socialmedia.color.fg }} !important; }; 
 
 {% endif %}
 
@@ -58,8 +66,8 @@ body {
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.add('theme://js/tether.min.js') %}
-
         {% do assets.add('theme://js/bootstrap/bootstrap.min.js') %}
+        {% do assets.add('theme://js/functions.js') %}
 
     {% endblock %}
     {{ assets.js() }}
@@ -124,5 +132,4 @@ body {
 {% block bottom %}
     {{ assets.js('bottom') }}
 {% endblock %}
-
 </body>

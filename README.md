@@ -74,7 +74,9 @@ Once this is done, you should be able to see the new theme on the frontend. Keep
 ## Configuration options
 
 You can reach all configuration options in the admin interface, so it's recommended
-to use it. 
+to use it. Since version 0.1.1 the configuration options are splitted into tabs. 
+You'll find the global or general options in the first tab, the footer and sub-footer
+options in the second tab and the Social Media settings beside it. 
 
 ### Footer support
 
@@ -119,6 +121,9 @@ Both image files have to be stored in a folder in _user/pages/images/_:
 * subfooter.enabled: true/false: Show the content below the footer.
 * subfooter.content: This is the content of the subfooter area. The default value is a hint to Grav CMS and the theme, but you can modify the content fitting your needs. 
 
+### Social Media Settings
+
+todo
 
 ## Thanks
 

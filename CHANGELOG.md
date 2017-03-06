@@ -1,13 +1,13 @@
 
 # v0.1.1
-## xx-02-2017
+## 06-03-2017
 
 1. [](#new)
-    * xxxx
+    * Social Media icon settings. You can add buttons to link Social Media sites.  
+    * The theme options are now splited into tabs.
     
 1. [](#bugfix)
     * Fix URL to README on Github
-    * xxxx
     
 # v0.1.0
 ##  19-02-2017
