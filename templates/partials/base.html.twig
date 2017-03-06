@@ -43,6 +43,18 @@ body {
     .footer-container { background-color: {{ theme_config.footer.color_bg }} }
 
 {% endif %}
+{% if theme_config.footer.color_link %}
+    .footer-container a { color: {{ theme_config.footer.color_link }} }
+
+{% endif %}
+{% if theme_config.subfooter.color_bg %}
+    .subfooter-container { background-color: {{ theme_config.subfooter.color_bg }} }
+
+{% endif %}
+{% if theme_config.subfooter.color_link %}
+    .subfooter-container a { color: {{ theme_config.subfooter.color_link }} }
+
+{% endif %}
 {% if theme_config.socialmedia.color.bg %}
 
 .innersocialbg {

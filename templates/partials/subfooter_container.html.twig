@@ -1,4 +1,7 @@
+
 {% if theme_config.subfooter.enabled %}
+<div class="subfooter-container" style="{% if theme_config.subfooter.color_fg %}color: {{ theme_config.subfooter.color_fg }};{% endif %}">
+
 <div class="container">
     <div class="footer">
         <div class="row wrapper padding">
@@ -9,5 +12,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endif %}

@@ -56,6 +56,8 @@ Manually updating Tikva is pretty simple. Here is what you will need to do to ge
 
 * Preinstalled [Bootswatch|(https://bootswatch.com/) Bootstrap 4 themes 
 * Lightweight and minimal for optimal performance
+* Flexible footer and sub-footer handling 
+* Predefined and custom social media site buttons
 
 
 ## Setup
@@ -98,17 +100,14 @@ At last, create the content area pages.
 As parent page use the previously created "footer" folder. The page template should be "footer". 
 After finished you can edit the footer sections in the same manner as you edit pages. 
 
-### Predefined themes
+
+### General Options
 
 Tikva offers 25 themes! Most of them originate in [Bootswatch](https://bootswatch.com/) by Thomas Park. But you can also customize header and footer settings by the following options.
 
 * navbar.invert: true/false - Invert navigation bar. This changes the text color. 
 * navbar.background: Choose between seven options, in Bootstrap they are described as ".bg- * utils". 
 * navbar.background_color: If the previous option is not enough, you can pick your own color. 
-* footer.color_fg: Choose the foreground, i.e. text color used in the footer. 
-* footer.color_bg: Choose the background color used in the footer. 
-
-### Miscellaneous Settings
 
 * theme.adjust_header: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. As an example, to add 20 pixel, enter "20", the value has to be numeric. 
 
@@ -118,12 +117,45 @@ Tikva offers 25 themes! Most of them originate in [Bootswatch](https://bootswatc
 
 Both image files have to be stored in a folder in _user/pages/images/_:
 
+
+### Footer Options
+
+* footer.color_fg: Choose the foreground, i.e. text color used in the footer. 
+* footer.color_link: Choose the link color
+* footer.color_bg: Choose the background color used in the footer. 
+
+#### Subfooter Options
+
 * subfooter.enabled: true/false: Show the content below the footer.
+* subfooter.color_fg: Choose the foreground, i.e. text color used in the subfooter. 
+* subfooter.color_link: Choose the link color
+* subfooter.color_bg: Choose the background color used in the subfooter. 
 * subfooter.content: This is the content of the subfooter area. The default value is a hint to Grav CMS and the theme, but you can modify the content fitting your needs. 
+
 
 ### Social Media Settings
 
-todo
+#### Options
+
+In the first Social Media tab you can set generic options:
+
+* socialmedia.buttons.enabled: true/false: Show Social Media Buttons
+* socialmedia.buttons.position: Choose position of the buttons
+* socialmedia.buttons.alignment: Choose button alignment (left, center, right)
+* socialmedia.buttons.size: Button Size (small, medium, large)
+* socialmedia.buttons.type: Button Type (circle, square)
+* socialmedia.color.fg: Button Foreground (Icon) Color
+* socialmedia.color.bg: Button Background Color
+* socialmedia.color.bg_mouseover: Button Background Mouseover Color
+ 
+
+#### Social Media Buttons
+
+In the second tab you can add preconfigured and custom Social Media sites. 
+
+For Facebook, LinkedIn etc. just add your profile URL. 
+
+For custom sites, you have to add the site name, Font Awesome Icon and the page URL. You can add as many buttons as you want. 
 
 ## Thanks
 
