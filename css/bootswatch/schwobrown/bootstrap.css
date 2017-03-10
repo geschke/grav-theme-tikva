@@ -9798,3 +9798,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .list-group-item-action .list-group-item-heading {
   color: #fff;
 }
+
+blockquote {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 0.25rem solid #BB8A59;
+}
