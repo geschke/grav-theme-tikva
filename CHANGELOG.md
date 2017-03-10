@@ -1,4 +1,11 @@
 
+
+# v0.1.2
+## 10-03-2017
+    
+1. [](#bugfix)
+    * Fix blockquote issue, so it's not necessary to set the CSS class explitly
+
 # v0.1.1
 ## 06-03-2017
 
