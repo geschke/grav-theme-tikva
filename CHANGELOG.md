@@ -1,4 +1,12 @@
+# v0.1.3
+## 11-03-2017
 
+1. [](#new)
+    * Add switch to change the navigation bar style, i.e. to place it not fixed on top
+    * New feature: Set navigation text alignment (left as default, centered and right)
+2. [](#bugfix)
+    * CHANGELOG file fix to version 0.1.1
+    
 
 # v0.1.2
 ## 10-03-2017
@@ -13,8 +21,7 @@
     * Social Media icon settings. You can add buttons to link Social Media sites.  
     * The theme options are now splited into tabs.
     * Add options to set subfooter colors
-    
-1. [](#bugfix)
+2. [](#bugfix)
     * Fix URL to README on Github
     
 # v0.1.0

@@ -32,10 +32,16 @@
  <style>
         /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    {% if theme_config.theme.adjust_header != 0 %}
-    padding-top: {{ 60 + theme_config.theme.adjust_header }}px;
+    {% if theme_config.navbar.fixed_top %}
+    {% set padding = 60 %}
     {% else %}
-  padding-top: 60px;
+    {% set padding = 0 %}
+    
+    {% endif %}
+    {% if theme_config.theme.adjust_header != 0 %}
+    padding-top: {{ padding + theme_config.theme.adjust_header }}px;
+    {% else %}
+  padding-top: {{ padding }}px;
     {% endif %}
 }
 
@@ -91,15 +97,16 @@ body {
 {% block header %}
  
 {% if theme_config.navbar.background_color %}
-{% set navbar_style = "style=\"background-color: #{theme_config.navbar.background_color}\"" %}
-{% set navbar_bg = '' %}
+    {% set navbar_style = "style=\"background-color: #{theme_config.navbar.background_color}\"" %}
+    {% set navbar_bg = '' %}
 {% elseif theme_config.navbar.background and theme_config.navbar.background != 'default' %}
-{% set navbar_bg = theme_config.navbar.background %}
-{% set navbar_style = '' %}
+    {% set navbar_bg = theme_config.navbar.background %}
+    {% set navbar_style = '' %}
 {% else %}
-{% set navbar_bg = 'bg-primary' %}
-{% set navbar_style='' %}
+    {% set navbar_bg = 'bg-primary' %}
+    {% set navbar_style='' %}
 {% endif %}
+{% if theme_config.navbar.fixed_top %}
  <nav class="navbar navbar-toggleable-md {{ theme_config.navbar.invert ? 'navbar-inverse' : 'navbar-light' }} fixed-top {{ navbar_bg }}" {{ navbar_style }}>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -111,15 +118,37 @@ body {
       <img src="/{{ site_logo.path }}" />&nbsp;
       {% endif %}
       {{ config.site.title }}
-            </a>
+    </a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
- {% block header_navigation %}
-                {% include 'partials/navigation.html.twig' %}
-            {% endblock %}        
+      <div class="collapse navbar-collapse {% if theme_config.navbar.navigation.alignment == 'center' %}justify-content-md-center{% elseif theme_config.navbar.navigation.alignment == 'right' %}justify-content-end{% endif %} " id="navbarsExampleDefault">
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}        
       </div>
     </nav>
-
+{% else %}
+<div class="container">
+<div class="py-2">
+{% set site_logo = theme_config.theme.file_logo|first %}
+      <a class="navbar-brand " href="{{ base_url == '' ? '/' : base_url }}">
+      {% if site_logo %}
+      <img src="/{{ site_logo.path }}" />&nbsp;
+      {% endif %}
+      {{ config.site.title }}
+    </a>
+    </div>
+ <nav class="navbar navbar-toggleable-md {{ theme_config.navbar.invert ? 'navbar-inverse' : 'navbar-light' }} rounded {{ navbar_bg }}" {{ navbar_style }}>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse {% if theme_config.navbar.navigation.alignment == 'center' %}justify-content-md-center{% elseif theme_config.navbar.navigation.alignment == 'right' %}justify-content-end{% endif %}" id="navbarsExampleDefault">
+        {% block header_navigation2 %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}        
+      </div>
+    </nav>
+</div>
+{% endif %}
 
 {% endblock %}
 
