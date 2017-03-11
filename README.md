@@ -108,6 +108,8 @@ Tikva offers 25 themes! Most of them originate in [Bootswatch](https://bootswatc
 * navbar.invert: true/false - Invert navigation bar. This changes the text color. 
 * navbar.background: Choose between seven options, in Bootstrap they are described as ".bg- * utils". 
 * navbar.background_color: If the previous option is not enough, you can pick your own color. 
+* navbar.fixed_top: true/false - Navigation bar fixed to top or place it in a classical way after the site logo and title
+* navbar.navigation.alignment: - left (default), center, right: Navigation bar text alignment
 
 * theme.adjust_header: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. As an example, to add 20 pixel, enter "20", the value has to be numeric. 
 
