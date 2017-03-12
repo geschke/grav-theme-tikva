@@ -464,8 +464,12 @@ form:
                     slider.items:
                       type: list
                       style: vertical
-                      label: Add more social media sites
+                      label: Add slider elements
                       fields:
+                        
+                        .title:
+                          type: text
+                          label: Title
                         .image:
                           type: file
                           label: Image
@@ -476,18 +480,32 @@ form:
                           filesize: 5
                           accept:
                             - image/*
-                        .name:
+                        .description:
                           type: text
-                          label: Site name
-                          validate: 
-                            required: true
-                        .icon:
-                          type: text
-                          label: Font Awesome Icon
-                          validate: 
-                            required: true
+                          label: Description
+                        .alignment:
+                          type: toggle
+                          label: Alignment
+                          highlight: 1
+                          default: 1
+                          options:
+                            left: Left
+                            center: Centered
+                            right: Right
+                        .text_color:
+                          type: colorpicker
+                          label: Slider text color
+                          description: "Pick a color for the title and description text of this slide (default: transparent, i.e. use color defined in the theme stylesheet)"
+                        .page:
+                          type: pages
+                          size: medium
+                          classes: fancy
+                          label: PLUGIN_ADMIN.HOME_PAGE
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                          help: PLUGIN_ADMIN.HOME_PAGE_HELP
                         .url:
                           type: text
-                          label: Page URL
-                          validate: 
-                            required: true
+                          label: ...or enter URL to link to
+                          
