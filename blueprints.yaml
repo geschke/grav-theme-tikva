@@ -251,7 +251,6 @@ form:
                   title: Options
 
                   fields:
-
                     socialmedia.buttons.enabled:
                       type: toggle
                       label: Show Social Media Buttons
@@ -400,7 +399,95 @@ form:
                             required: true
 
 
-  
+        slider:
+          type: tab
+          title: Slider
+
+          fields:
+            tabs:
+              type: tabs
+              active: 1
+
+              fields:
+                options:
+                  type: tab
+                  title: Options
+
+                  fields:
+                    slider.enabled:
+                      type: toggle
+                      label: Show Slider
+                      highlight: 1
+                      default: 0
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED 
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
+                        
+                    slider.position:
+                      type: toggle
+                      label: Slider position
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: Above navigation (if navbar position is not fixed)
+                        2: Between navigation and featured articles
+                        3: Between featured articles and content
+                        4: Between content and footer
+                      
+                    slider.interval:
+                      type: text
+                      label: Transition delay
+                      description: Number of milliseconds a photo is displayed for (enter 0 for no automatically cycling)
+                      default: 5000
 
 
-                 
+                    slider.pause:
+                      type: checkbox
+                      label: Pause sliding on mouseenter
+
+                    slider.keyboard:
+                      type: checkbox
+                      label: Slider reacts to keyboard events
+
+                    slider.wrap:
+                      type: checkbox
+                      label: Cycle continuously
+                      
+                slideritems:
+                  type: tab
+                  title: Items
+
+                  fields:
+
+                    slider.items:
+                      type: list
+                      style: vertical
+                      label: Add more social media sites
+                      fields:
+                        .image:
+                          type: file
+                          label: Image
+                          multiple: false 
+                          destination: 'user/pages/images/slider'
+                          random_name: false
+                          avoid_overwriting: false
+                          filesize: 5
+                          accept:
+                            - image/*
+                        .name:
+                          type: text
+                          label: Site name
+                          validate: 
+                            required: true
+                        .icon:
+                          type: text
+                          label: Font Awesome Icon
+                          validate: 
+                            required: true
+                        .url:
+                          type: text
+                          label: Page URL
+                          validate: 
+                            required: true
