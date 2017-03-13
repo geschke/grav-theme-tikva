@@ -505,6 +505,8 @@ form:
                           show_modular: false
                           show_root: false
                           help: PLUGIN_ADMIN.HOME_PAGE_HELP
+                          options: 
+                            - Unset
                         .url:
                           type: text
                           label: ...or enter URL to link to

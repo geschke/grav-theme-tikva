@@ -1,25 +1,41 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselTikva" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
 
             {% for item in theme_config.slider.items %}
-    <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %}class="active"{% endif %}></li>
+    <li data-target="#carouselTikva" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %}class="active"{% endif %}></li>
             
             {% endfor %}
   </ol>
   <div class="carousel-inner" role="listbox">
-            {% for item in theme_config.slider.items %}
+  {% for item in theme_config.slider.items %}
     <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
     {% set image = item.image|first %}
-      <img class="d-block img-fluid" style="height: 500px;" src="{{ image.path }}" alt="{{ item.title }}">
+    {% if item.url %}
+        {% set slider_url = item.url %}
+    {% elseif item.page != 'Unset' %}
+        {% set slider_url = item.page %}
+    {% endif %}
+    {% if slider_url %}
+        <a href="{{ slider_url }}">
+    {% endif %}
+    <img class="d-block img-fluid" style="height: 500px;" src="{{ image.path }}" alt="{{ item.title }}">
+    {% if slider_url %}
+        </a>
+    {% endif %}
+    {% if item.title or item.description %}
+        <div class="carousel-caption d-none d-md-block">
+            {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+            {% if item.description %}<p>bar lala</p>{% endif %}
+        </div>
+    {% endif %}
     </div>
-            
-            {% endfor %}
+  {% endfor %}
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselTikva" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselTikva" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
