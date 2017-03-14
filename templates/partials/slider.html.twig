@@ -1,5 +1,6 @@
-<div id="carouselTikva" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
+<div id="carouselTikva" class="carousel slide" data-ride="carousel" data-interval="{{ theme_config.slider.interval }}" data-pause="{{ theme_config.slider.options|first ? 'hover' : '' }}" data-wrap="{{ theme_config.slider.wrap|first ? 'true' : 'false'  }}" data-keyboard="{{ theme_config.slider.keyboard|first ? 'true' : 'false' }}">
+  <!-- Indicators -->
+  <ol class="carousel-indicators"> 
 
             {% for item in theme_config.slider.items %}
     <li data-target="#carouselTikva" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %}class="active"{% endif %}></li>
@@ -23,9 +24,9 @@
         </a>
     {% endif %}
     {% if item.title or item.description %}
-        <div class="carousel-caption d-none d-md-block">
-            {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
-            {% if item.description %}<p>bar lala</p>{% endif %}
+        <div class="carousel-caption {% if item.alignment == 'left' %} text-left {% elseif item.alignment == 'right' %}text-right {% endif %}d-none d-md-block">
+            {% if item.title %}<h3>{% if slider_url %}<a href="{{ slider_url }}">{% endif %}{{ item.title }}{% if slider_url %}</a>{% endif %}</h3>{% endif %}
+            {% if item.description %}<p>{% if slider_url %}<a href="{{ slider_url }}">{% endif %}{{ item.description }}{% if slider_url %}</a>{% endif %}</p>{% endif %}
         </div>
     {% endif %}
     </div>

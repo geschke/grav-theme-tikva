@@ -442,18 +442,27 @@ form:
                       description: Number of milliseconds a photo is displayed for (enter 0 for no automatically cycling)
                       default: 5000
 
-
-                    slider.pause:
-                      type: checkbox
-                      label: Pause sliding on mouseenter
+                    slider.options:
+                      type: checkboxes
+                      label: Slider Options
+                      default: [pause: false]
+                      options:
+                          pause: Pause sliding on mouseenter
+                      use: keys
 
                     slider.keyboard:
-                      type: checkbox
-                      label: Slider reacts to keyboard events
+                      type: checkboxes
+                      default: [keyboard: false]
+                      options:
+                          keyboard: Slider reacts to keyboard events
+                      use: keys
 
                     slider.wrap:
-                      type: checkbox
-                      label: Cycle continuously
+                      type: checkboxes
+                      default: [wrap: true]
+                      options:
+                          pause: Cycle continuously
+                      use: keys
                       
                 slideritems:
                   type: tab
