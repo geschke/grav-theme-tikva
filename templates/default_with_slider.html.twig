@@ -1,0 +1,23 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block slider_1 %}
+{% include 'partials/slider.html.twig' with {'slider_position': '1'} %}
+{% endblock %}
+
+{% block slider_2 %}
+<div class="container">
+{% include 'partials/slider.html.twig' with {'slider_position': '2'} %}
+</div>
+{% endblock %}
+
+
+{% block slider_3 %}
+<div class="container">
+{% include 'partials/slider.html.twig' with {'slider_position': '3'} %}
+</div>
+{% endblock %}
+
+{% block content %}
+    {{ page.content }}
+{% endblock %}

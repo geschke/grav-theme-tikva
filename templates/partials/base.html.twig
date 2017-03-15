@@ -127,6 +127,7 @@ body {
       </div>
     </nav>
 {% else %}
+
 <div class="container">
 <div class="py-2">
 {% set site_logo = theme_config.theme.file_logo|first %}
@@ -137,6 +138,7 @@ body {
       {{ config.site.title }}
     </a>
     </div>
+{% block slider_1 %}{% endblock %}
  <nav class="navbar navbar-toggleable-md {{ theme_config.navbar.invert ? 'navbar-inverse' : 'navbar-light' }} rounded {{ navbar_bg }}" {{ navbar_style }}>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -151,9 +153,7 @@ body {
 {% endif %}
 
 {% endblock %}
-<div class="container">
-{% include 'partials/slider.html.twig' %}
-</div>
+{% block slider_2 %}{% endblock %}
 {% block body %}
     <section id="body">
 
@@ -163,6 +163,8 @@ body {
         </div>
     </section>
 {% endblock %}
+
+{% block slider_3 %}{% endblock %}
 
 {% include 'partials/socialmedia.html.twig' with {'socialmedia_position': '1'} %}
 {% block footer %}

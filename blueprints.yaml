@@ -432,9 +432,8 @@ form:
                       default: 1
                       options:
                         1: Above navigation (if navbar position is not fixed)
-                        2: Between navigation and featured articles
-                        3: Between featured articles and content
-                        4: Between content and footer
+                        2: Between navigation and content
+                        3: Between content and footer
                       
                     slider.interval:
                       type: text
