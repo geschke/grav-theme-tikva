@@ -435,6 +435,33 @@ form:
                         2: Between navigation and content
                         3: Between content and footer
                       
+                    slider.width:
+                      type: text
+                      label: Width of slider images. Set '0' for no resizing.  
+                      description: It is recommended to use an appropriate image size of the slider images, e.g. 1920x500px when uploading the slider images. The slider images are not resized automatically, but it's possible to set a width with this option. This works in combination with the next setting "Preserve ratio". 
+                      default: 940
+
+                    slider.height:
+                      type: text
+                      label: Height of slider images. Set '0' for no resizing.  
+                      description: It is recommended to use an appropriate image size of the slider images, e.g. 1920x500px when uploading the slider images. The slider images are not resized automatically, but it's possible to set a height with this option. This works in combination with the next setting "Preserve ratio". 
+                      default: 500
+
+
+
+                    slider.preserve_ratio:
+                      type: toggle
+                      label: Preserve ratio of slider images
+                      description: This is only important if the slider images are resized. 
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED 
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
+
+
                     slider.interval:
                       type: text
                       label: Transition delay

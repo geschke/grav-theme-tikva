@@ -2,19 +2,19 @@
 
 
 {% block slider_1 %}
-{% include 'partials/slider.html.twig' with {'slider_position': '1'} %}
+{% include 'partials/slider.html.twig' with {'slider_position': '1', 'page': page} %}
 {% endblock %}
 
 {% block slider_2 %}
 <div class="container">
-{% include 'partials/slider.html.twig' with {'slider_position': '2'} %}
+{% include 'partials/slider.html.twig' with {'slider_position': '2', 'page': page} %}
 </div>
 {% endblock %}
 
 
 {% block slider_3 %}
 <div class="container">
-{% include 'partials/slider.html.twig' with {'slider_position': '3'} %}
+{% include 'partials/slider.html.twig' with {'slider_position': '3', 'page': page} %}
 </div>
 {% endblock %}
 

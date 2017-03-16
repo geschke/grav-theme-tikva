@@ -43,8 +43,8 @@
             
             {% for bcustom in config.buttoncustomlist %}
             {{ _self.build_socialmedia_custombutton(bcustom, config.buttons.size, config.buttons.type, config.color) }}
-
             {% endfor %}
+
             {% for bsite, burl in config.button %}
             {{ _self.build_socialmedia_button(bsite, burl, config.buttons.size, config.buttons.type, config.color) }}
             {% endfor %}
