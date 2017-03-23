@@ -159,6 +159,47 @@ For Facebook, LinkedIn etc. just add your profile URL.
 
 For custom sites, you have to add the site name, Font Awesome Icon and the page URL. You can add as many buttons as you want. 
 
+### Slider
+
+Tikva supports an image slider, which is a component of Bootstrap framework. The slider 
+is fully configurable by the admin plugin, so it's strong recommended to use it. 
+In the first tab you will find the generic options to configure the slider. You can switch 
+in on or off and choose the place where the slider will be displayed. 
+
+**Usage:** The slider is embeddable in every page. To enable the slider view, please choose            the page template "Default with slider". You can switch the slider on and off in 
+           the slider options, but without choosing the right page template, it will never
+           be displayed. 
+
+#### Options
+
+* slider.enabled: true/false - Show Slider
+* slider.position: Slider position, the possible values are:
+    1: Above navigation (if navbar position is not fixed)
+    2: Between navigation and content
+    3: Between content and footer
+* slider.width: Width of slider images. Set '0' for no resizing. It is recommended to use an appropriate image size of the slider images, e.g. 1920x500px when uploading the slider images. The slider images are not resized automatically, but it's possible to set a width with this option. This works in combination with the next setting "Preserve ratio". 
+* slider.height: Height of slider images. Set '0' for no resizing. It is recommended to use an appropriate image size of the slider images, e.g. 1920x500px when uploading the slider images. The slider images are not resized automatically, but it's possible to set a height with this option. This works in combination with the next setting "Preserve ratio". 
+* slider.preserve_ratio: true/false - Preserve ratio of slider images
+* slider.interval: Transition delay. Number of milliseconds a photo is displayed for (enter 0 for no automatically cycling), default 5000
+* slider.pause.pause: Pause sliding on mouseenter
+* slider.keyboard.keyboard: Slider reacts to keyboard events
+* slider.wrap.wrap: Cycle continuously
+
+#### Items
+
+The slider items (images) are stored in a list, so you can add as many as you want. 
+The itemss can be configured by the following fields:
+
+*  .title: Title
+*  .image: Image upload with filesystem destination: 'user/pages/images/slider'
+*  .description: The description and title are displayed in the bottom of the image content.
+*  .alignment: Alignment, valid input is "left", "centered" or "right" to place the title and description
+* .text_color: Text color for title and description, default: transparent, i.e. use color defined in the theme stylesheet
+* .page: The page which will be linked to. Choose "unset" to disable. 
+* .url: Enter URL to link to. Leave empty if this should not be used. The .url setting overwrites the .page option. 
+                                  
+
+
 ## Thanks
 
 * all Grav developers and contributors

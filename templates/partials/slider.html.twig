@@ -23,10 +23,15 @@
     {% if slider_url %}
         <a href="{{ slider_url }}">
     {% endif %}
-    <!-- {{ page.find('/images/slider').media["#{ image.name }"].forceResize(920,500).html("#{ image.title }","#{ image.title }","d-block img-fluid")  }}
-    -->
-    {{ page.find('/images/slider').media["#{ image.name }"].resize(920,500).html("#{ image.title }","#{ image.title }","d-block img-fluid")  }}
-    <!-- <img class="d-block img-fluid" style="height: 500px;" src="{{ image.path }}" alt="{{ item.title }}"> -->
+    {% if config.width == 0 and config.height == 0 %} {# do not resize, use images with original size #}
+    {{ page.find('/images/slider').media["#{ image.name }"].html("#{ image.title }","#{ image.title }","d-block img-fluid")  }}
+    {% elseif config.preserve_ratio %} {# resize with original aspect-ratio #}
+        {{ page.find('/images/slider').media["#{ image.name }"].resize(config.width > 0 ? config.width : 1000,config.height > 0 ? config.height : 500).html("#{ image.title }","#{ image.title }","d-block img-fluid")  }}
+    
+    {% else %} {# force resize #}
+        {{ page.find('/images/slider').media["#{ image.name }"].forceResize(config.width > 0 ? config.width : 1000,config.height > 0 ? config.height : 500).html("#{ image.title }","#{ image.title }","d-block img-fluid")  }}
+    {% endif %}
+    
     {% if slider_url %}
         </a>
     {% endif %}

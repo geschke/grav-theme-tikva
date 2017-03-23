@@ -1,3 +1,10 @@
+# v0.1.4
+## 23-03-2017
+
+1. [](#new)
+    * Add Bootstrap's slider component to build an image slider
+    
+
 # v0.1.3
 ## 11-03-2017
 
