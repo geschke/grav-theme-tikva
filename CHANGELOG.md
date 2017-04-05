@@ -1,3 +1,10 @@
+# v0.1.5
+## 06-04-2017
+
+1. [](#new)
+    * Add option to enable navigation bar dropdown by mouseover
+    
+
 # v0.1.4
 ## 23-03-2017
 

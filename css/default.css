@@ -2,3 +2,147 @@
     padding-top: 10px;
     padding-bottom: 10px; 
 }
+
+.modular.header-image #header {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none; }
+  .modular.header-image #header #logo h3 {
+    color: #FFFFFF; }
+  .modular.header-image #header #navbar a {
+    color: #FFFFFF; }
+.modular .showcase {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #666;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #FFFFFF; }
+  .modular .showcase h1 {
+    font-size: 4rem;
+    margin-top: 0; }
+    @media only all and (min-width: 48em) and (max-width: 59.938em) {
+      .modular .showcase h1 {
+        font-size: 3rem; } }
+    @media only all and (max-width: 47.938em) {
+      .modular .showcase h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 2.5rem; } }
+  .modular .showcase .button {
+    color: #FFFFFF;
+    padding: 0.7rem 2rem;
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 1.3rem; }
+    .modular .showcase .button:hover {
+      background: rgba(255, 255, 255, 0.2); }
+
+.modular .features {
+  padding: 6rem 0;
+  text-align: center; }
+  .modular .features:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .modular .features h2 {
+    margin: 0;
+    line-height: 100%; }
+  .modular .features p {
+    margin: 1rem 0;
+    font-size: 1.2rem; }
+    @media only all and (max-width: 47.938em) {
+      .modular .features p {
+        font-size: 1rem; } }
+  .modular .features .feature-items {
+    margin-top: 2rem; }
+    @supports not (flex-wrap: wrap) {
+      .modular .features .feature-items {
+        overflow: hidden; } }
+  .modular .features .feature {
+    display: block;
+    float: left;
+    width: 25%;
+    vertical-align: top;
+    margin-top: 2rem;
+    margin-bottom: 1rem; }
+    @media only all and (min-width: 30.063em) and (max-width: 47.938em) {
+      .modular .features .feature {
+        margin-top: 1rem;
+        width: 50%; } }
+    @media only all and (max-width: 30em) {
+      .modular .features .feature {
+        margin-top: 1rem;
+        width: 100%; } }
+    .modular .features .feature i.fa {
+      font-size: 2rem;
+      color: #1BB3E9; }
+    .modular .features .feature h4 {
+      margin: 0;
+      font-size: 1.1rem; }
+    .modular .features .feature p {
+      display: inline-block;
+      font-size: 1rem;
+      margin: 0.2rem 0 1rem; }
+  .modular .features.big {
+    text-align: center; }
+    .modular .features.big .feature {
+      width: 50%; }
+      @media only all and (max-width: 30em) {
+        .modular .features.big .feature {
+          margin-top: 1rem;
+          width: 100%; } }
+    .modular .features.big i.fa {
+      font-size: 3rem;
+      float: left; }
+    .modular .features.big .feature-content {
+      padding-right: 2rem; }
+      .modular .features.big .feature-content.icon-offset {
+        margin-left: 5rem; }
+      .modular .features.big .feature-content h4 {
+        font-size: 1.3rem;
+        text-align: left; }
+      .modular .features.big .feature-content p {
+        padding: 0;
+        text-align: left; }
+
+.callout {
+  background: #f6f6f6;
+  padding: 6rem 0.938rem; }
+  @media only all and (max-width: 59.938em) {
+    .callout {
+      text-align: center; } }
+  .callout .align-left {
+    float: left;
+    margin-right: 2rem; }
+    @media only all and (max-width: 59.938em) {
+      .callout .align-left {
+        float: none;
+        margin-right: 0; } }
+  .callout .align-right {
+    float: right;
+    margin-left: 2rem; }
+    @media only all and (max-width: 59.938em) {
+      .callout .align-right {
+        float: none;
+        margin-left: 0; } }
+  .callout img {
+    border-radius: 3px; }
+
+.modular .modular-row:last-child {
+  margin-bottom: 2rem; }
+  
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}

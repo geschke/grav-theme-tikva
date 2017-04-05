@@ -1,5 +1,5 @@
 name: Tikva
-version: 0.1.4
+version: 0.1.5
 description: Tikva is a minimalistic Grav theme, based on Bootstrap 4 (alpha) framework
 icon: rebel
 author:
@@ -25,17 +25,6 @@ form:
           title: General Options
         
           fields:
-            dropdown.enabled:
-              type: toggle
-              label: Dropdown in Menu
-              highlight: 1
-              default: 1
-              options:
-                1: PLUGIN_ADMIN.ENABLED 
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
-
             theme.stylesheet:
               type: select
               size: medium
@@ -134,6 +123,28 @@ form:
               label: OR set custom navigation bar background color
               description: If color is set, it will be used for background. Set empty for above selection.
 
+            dropdown.enabled:
+              type: toggle
+              label: Dropdown in Menu
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED 
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            dropdown.enable_mouseover:
+              type: toggle
+              label: Show dropdown on hover
+              highlight: 0
+              description: A little warning - this breaks the ability to handle the responsive feature of the theme. The theme uses Bootstrap v4 framework, and per default there is no option to drop a menu automatically on mouseover. So it is not recommended to activate this option. 
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED 
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
 
             theme.file_logo:
               type: file

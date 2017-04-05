@@ -86,7 +86,10 @@ body {
         {% do assets.add('theme://js/tether.min.js') %}
         {% do assets.add('theme://js/bootstrap/bootstrap.min.js') %}
         {% do assets.add('theme://js/functions.js') %}
-
+        {% if theme_config.dropdown.enable_mouseover %}
+            {% do assets.add('theme://js/dropdown-hover.js') %}
+        {% endif %}
+        
     {% endblock %}
     {{ assets.js() }}
 
