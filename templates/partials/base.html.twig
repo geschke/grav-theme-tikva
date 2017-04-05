@@ -43,6 +43,15 @@ body {
     {% else %}
   padding-top: {{ padding }}px;
     {% endif %}
+
+{% if theme_config.background.color %}
+    background-color: {{ theme_config.background.color }};
+{% endif %}
+    {% set background_image = theme_config.background.image|first %}
+    {% if background_image %}
+        background-image: url({{ background_image.path }});
+    {% endif %}
+
 }
 
 {% if theme_config.footer.color_bg %}
