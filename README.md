@@ -114,10 +114,16 @@ Tikva offers 25 themes! Most of them originate in [Bootswatch](https://bootswatc
 * theme.adjust_header: Adjust header by adding a distance between navigation and content. Some of the styles need more space, so you can use this option to adjust. As an example, to add 20 pixel, enter "20", the value has to be numeric. 
 
 * dropdown.enabled: true/false - show dropdown links in navigation 
+* dropdown.enable_mouseover: true/false - Show dropdown on mouseover. Warning - this breaks the ability to handle the responsive feature of the theme. The theme uses Bootstrap v4 framework, and per default there is no option to drop a menu automatically on mouseover. So it is not recommended to activate this option. 
+
 * theme.file_logo: Logo image in header. 
 * favicon_file: Change the favicon by uploading your own. 
 
 Both image files have to be stored in a folder in _user/pages/images/_:
+
+* background.color: Background color. If color is set, it will be used for background. Set empty for default.
+* background.image: Background image upload feature. The images will be stored in the folder _'user/pages/images/bg'_
+* background.repeat: Background image repeat options. Default "repeat", this enables repetition in both directions. Possible values: repeat-x (horizontally), repeat-y (vertically) and no-repeat (no repetition).
 
 
 ### Footer Options

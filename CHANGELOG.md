@@ -3,7 +3,7 @@
 
 1. [](#new)
     * Add option to enable navigation bar dropdown by mouseover
-    * Add background image upload feature
+    * Add background image upload feature and its repeat options
     
 
 # v0.1.4

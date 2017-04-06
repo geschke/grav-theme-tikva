@@ -185,7 +185,17 @@ form:
               accept:
                 - image/*
             
-
+            background.repeat:
+              type: select
+              size: medium
+              classes: fancy
+              label: Background image repeat options
+              default: 'repeat'
+              options:
+                'repeat': "Repeat in both directions"
+                'repeat-x': "Repeat horizontally"
+                'repeat-y': "Repeat vertically"
+                'no-repeat': "No repetition"
       
         footer:
           type: tab
