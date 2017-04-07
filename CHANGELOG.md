@@ -1,3 +1,9 @@
+# v0.1.7
+## 07-04-2017
+
+1. [](#bugfix)
+    * The previous release was too fast - fixed version number in blueprint.yaml file. 
+    
 # v0.1.6
 ## 07-04-2017
 
