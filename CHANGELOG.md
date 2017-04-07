@@ -1,3 +1,9 @@
+# v0.1.6
+## 07-04-2017
+
+1. [](#bugfix)
+    * Fix URL of background image 
+
 # v0.1.5
 ## 06-04-2017
 

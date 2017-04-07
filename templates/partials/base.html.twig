@@ -49,7 +49,7 @@ body {
 {% endif %}
     {% set background_image = theme_config.background.image|first %}
     {% if background_image %}
-        background-image: url("{{ background_image.path }}");
+        background-image: url("/{{ background_image.path }}");
         {% set background_repeat = "repeat" %}
         {% if theme_config.background.repeat %}
             {% set background_repeat = theme_config.background.repeat %}
